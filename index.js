@@ -1,6 +1,6 @@
-import express from 'express'
-import mongoose from 'mongoose'
-import { Power } from './model'
+const express = require('express')
+const mongoose = require('mongoose')
+const { Power } = require('./model')
 
 const app = express()
 app.use(express.json())
@@ -26,4 +26,4 @@ app.listen(PORT, async () => {
     
 })
 
-export { app }
+module.exports = app
