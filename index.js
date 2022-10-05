@@ -25,3 +25,5 @@ app.listen(PORT, async () => {
     }
     
 })
+
+export { app }
