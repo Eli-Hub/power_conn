@@ -1,6 +1,6 @@
 import express from 'express'
 import mongoose from 'mongoose'
-import { Power } from './model.js'
+import { Power } from './model'
 
 const app = express()
 app.use(express.json())
