@@ -1,9 +1,13 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const { Power } = require('./model')
+var cors = require('cors');
 
 const app = express()
 app.use(express.json())
+
+
+app.use(cors());
 
 
 app.get('/power', async (req, res) => {
