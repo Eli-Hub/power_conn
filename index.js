@@ -15,6 +15,7 @@ app.get('/power', async (req, res) => {
         { '$sort': { 'createdAt': -1 }},
         {'$group': { '_id': '$branch', 'createdAt': { $first: '$createdAt'}, status: { $first: '$status' }}}
     ])
+    branch_status.sort((a, b) => a._id - b._id)
     return res.send(branch_status)
 })
 
