@@ -15,13 +15,13 @@ app.get('/power', async (req, res) => {
         { '$sort': { 'createdAt': -1 }},
         {'$group': { '_id': '$branch', 'createdAt': { $first: '$createdAt'}, status: { $first: '$status' }}}
     ])
-    branch_status.sort((a, b) => a._id - b._id)
+    branch_status.sort()
     return res.send(branch_status)
 })
 
 const PORT = process.env.PORT || 3000
 app.listen(PORT, async () => {
-    console.log('listeninng on port: ', PORT)
+    console.log('listening on port: ', PORT)
     try {
         await mongoose.connect('mongodb+srv://power_app:stanbic123@cluster0.wzrueuy.mongodb.net/?retryWrites=true&w=majority')
         console.log('db connection successful')
